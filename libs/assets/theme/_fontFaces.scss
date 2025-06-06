@@ -1,0 +1,93 @@
+/*
+ * Takaq Font
+ */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-SemiBold.ttf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Cepheid';
+  src: url('../fonts/CepheidSans-Bold.ttf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Cepheid';
+  src: url('../fonts/CepheidSans-Bold-Italic.ttf');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Cepheid';
+  src: url('../fonts/CepheidSans-Italic.ttf');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Cepheid';
+  src: url('../fonts/CepheidSans-Light.ttf');
+  font-weight: lighter;
+}
+@font-face {
+  font-family: 'Cepheid';
+  src: url('../fonts/CepheidSans-Light-Italic.ttf');
+  font-weight: lighter;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Cepheid';
+  src: url('../fonts/CepheidSans-Regular.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Cepheid';
+  src: url('../fonts/CepheidSans-Semibold.ttf');
+  font-weight: bolder;
+}
+@font-face {
+  font-family: 'Cepheid';
+  src: url('../fonts/CepheidSans-Semibold-Italic.ttf');
+  font-weight: bolder;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Yu Gothic UI';
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../lib/materialicons/material-icons-v42.woff2');
+}
+
+/*
+  Jasper Report styles
+*/
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: bold;
+  src: url('../fonts/Inter-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'InterSemiBold';
+  font-weight: bold;
+  src: url('../fonts/Inter-SemiBold.ttf');
+}

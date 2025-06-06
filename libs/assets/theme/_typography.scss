@@ -1,0 +1,184 @@
+/*!
+ * Copyright (c) 2019 Takaq. All Rights Reserved.
+ */
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+@import "variables";
+
+/**
+    Typography
+**/
+
+// TODO: need to fix - https://sass-lang.com/documentation/breaking-changes/slash-div
+/*Conversion Ration sp to rem for html */
+$conversionRatioSpToRemWeb: 0.0625; // 1/16 --> 0.0625
+$conversionRatioRemToPxWeb: 16.0;
+
+// Scales
+@function spToRem($sps) {
+  @return $sps * $conversionRatioSpToRemWeb;
+}
+@function remToPx($rems) {
+  @return $rems * $conversionRatioRemToPxWeb;
+}
+// TODO: need to fix - https://sass-lang.com/documentation/breaking-changes/slash-div
+/* TODO:HT
+@function spacing($tracking, $px) {
+  @return $tracking / $px;
+}
+*/
+@mixin mat-typo($size, $weight, $spacing) {
+  font-weight: $weight !important;
+  font-size: #{spToRem($size)}rem !important;
+  /* TODO:HT
+  letter-spacing: #{spacing($spacing, remToPx($size))}px !important;
+  */
+}
+
+// Overwrite default Angular Typography
+/* Before Anglular 15
+$custom-typography: mat-typography-config(
+    $font-family:  $mat-takaq-font-family,
+    $display-4:    mat-typography-level($takaq-display-4...),
+    $display-3:    mat-typography-level($takaq-display-3...),
+    $display-2:    mat-typography-level($takaq-display-2...),    // used to be "mat-h3". angular mat-h3 is much smaller.
+    $display-1:    mat-typography-level($takaq-display-1...),    // used to be "mat-h4". angular mat-h4 is much smaller, use for biggest title
+    $headline:     mat-typography-level($takaq-headline...),     // used to be "mat-h5", is now mat-h1
+    $title:        mat-typography-level($takaq-title...),        // used to be "h6-bold" now mat-h2. changed fontweight
+    $subheading-2: mat-typography-level($takaq-subheading-2...), // subtitle1 now mat-h3 or subheading-2
+    $subheading-1: mat-typography-level($takaq-subheading-1...), // subtitle2 now mat-h4 or subheading-1
+    $body-2:       mat-typography-level($takaq-body-2...),
+    $body-1:       mat-typography-level($takaq-body-1...),
+    $button:       mat-typography-level($takaq-button...),       // Line-height must be unit-less fraction of the font-size.
+    $caption:      mat-typography-level($takaq-caption...),
+    $input:        mat-typography-level($takaq-input...)
+);
+@include mat-base-typography($custom-typography);
+*/
+
+/* ========================================================================================
+// Set the default typography
+@include mat.all-component-typographies(
+    mat.define-typography-config($font-family: $mat-takaq-font-family)
+);
+
+// Define the default theme
+$default-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: mat.define-palette(mat.$indigo-palette),
+        accent: mat.define-palette(mat.$pink-palette),
+      ),
+      typography:
+        mat.define-typography-config(
+          $font-family:  $mat-takaq-font-family,
+          $headline-1: mat.define-typography-level($takaq-display-4...),
+          $headline-2: mat.define-typography-level($takaq-display-3...),
+          $headline-3: mat.define-typography-level($takaq-display-2...),
+          $headline-4: mat.define-typography-level($takaq-display-1...),
+          $headline-5: mat.define-typography-level($takaq-headline...),
+          $headline-6: mat.define-typography-level($takaq-title...),
+          $subtitle-1: mat.define-typography-level($takaq-subheading-2...),
+          $subtitle-2: mat.define-typography-level($takaq-subheading-1...),
+          $body-2: mat.define-typography-level($takaq-body-2...),
+          $body-1: mat.define-typography-level($takaq-body-1...),
+          $button: mat.define-typography-level($takaq-button...),
+        ),
+      density: 0,
+    )
+);
+@include mat.all-component-themes($default-theme);
+======================================================================================== */
+
+@mixin nx-typography {
+  margin: 0;
+}
+
+.nx-display-4 {
+  @extend .mat-headline-1 !optional;
+  @include nx-typography;
+}
+
+.nx-display-3 {
+  @extend .mat-headline-2 !optional;
+  @include nx-typography;
+}
+
+.nx-display-2 {
+  @extend .mat-headline-3 !optional;
+  @include nx-typography;
+}
+
+.nx-display-1 {
+  @extend .mat-headline-4 !optional;
+  @include nx-typography;
+}
+
+.mat-headline {
+  @extend .mat-headline-5 !optional;
+  @include nx-typography;
+}
+
+.mat-title {
+  @extend .mat-headline-6 !optional;
+  @include nx-typography;
+}
+
+.mat-subheading-2 {
+  @extend .subtitle-1 !optional;
+  @include nx-typography;
+}
+
+.mat-subheading-1 {
+  @extend .subtitle-2 !optional;
+  @include nx-typography;
+}
+
+.mat-body-2 {
+  @extend .body-2 !optional;
+  @include nx-typography;
+}
+
+.mat-body-1 {
+  @extend .body-1 !optional;
+  @include nx-typography;
+}
+
+.mat-button {
+  @extend .button !optional;
+  @include nx-typography;
+}
+
+.mat-caption {
+  @include mat-typo(12, $font-weight-regular, 20);
+  @include nx-typography;
+}
+
+// Odd sizing. (Font height calculated by reboot, 1.5). No good equivalent in Angular typography
+// use for title
+.mat-h4-medium {
+  @include mat-typo(30, $font-weight-medium, 0);
+  @include nx-typography;
+}
+
+// Same issue as mat-h4-medium
+.mat-h4-bold {
+  @include mat-typo(30, $font-weight-bold, 0);
+  @include nx-typography;
+}
+
+.mat-h6-bold {
+  @include mat-typo(20, $font-weight-bold, 0);
+  @include nx-typography;
+}
+
+// use for table text with warning
+.mat-subtitle2-warning {
+  @extend .mat-subheading-1;
+  @include nx-typography;
+  font-weight: $font-weight-bold;
+  color: $error-red;
+}

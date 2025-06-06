@@ -1,0 +1,11 @@
+{
+  "button": {
+    "primary": "Primary",
+    "secondary": "Secondary",
+    "tertiary": "Tertiary",
+    "neutral": "Neutral",
+    "critical": "Critical",
+    "accent": "Accent",
+    "warn": "Warn"
+  }
+}

@@ -1,0 +1,70 @@
+/*!
+ * Copyright (c) 2019 Takaq. All Rights Reserved.
+ */
+
+@import "variables";
+
+$header-bar-large: $font-size-huge;
+$header-bar-dropdown: $font-size-large;
+
+$create-test-header-bar-label: $font-size-large;
+$create-test-header-bar-text: $font-size-xl;
+
+.font-weight-standard {
+  font-weight: 400 !important;
+}
+
+.font-weight-heavy {
+  font-weight: 500 !important;
+}
+
+.font-weight-bold {
+  font-weight: 600 !important;
+}
+
+.font-largest {
+  font-size: $font-size-largest !important;
+}
+
+.font-largest-bold {
+  @extend .font-largest;
+  @extend .font-weight-bold;
+}
+
+.font-huge {
+  font-size: $font-size-huge !important;
+}
+
+.font-xl {
+  font-size: $font-size-xl !important;
+}
+
+.font-large {
+  font-size: $font-size-large !important;
+}
+
+.font-medium {
+  font-size: $font-size-medium !important;
+}
+
+.font-small {
+  font-size: $font-size-small !important;
+}
+
+.font-small-bold {
+  @extend .font-small;
+  @extend .font-weight-bold;
+}
+
+.font-18px {
+  font-size: $font-size-18px !important;
+}
+
+.font-18px-bold {
+  @extend .font-18px;
+  @extend .font-weight-bold;
+}
+
+.font-xs {
+  font-size: $font-size-xs !important;
+}

@@ -1,0 +1,50 @@
+/*!
+ * Copyright (c) 2022 Takaq. All Rights Reserved.
+ */
+
+@import "variables";
+
+.nx-cs-normal {
+  width: 150px;
+  height: 48px;
+}
+
+.nx-cs-width-60 {
+  width: 60%;
+}
+
+.nx-cs-full-width {
+  width: 100%;
+}
+
+.nx-cs-x-narrow {
+  width: 120px;
+}
+
+.nx-cs-x-normal {
+  width: 180px;
+}
+
+.nx-cs-x-medium {
+  width: 208px;
+}
+
+.nx-cs-x-long {
+  width: 250px;
+}
+
+.nx-cs-x-xlong {
+  width: 300px;
+}
+
+.nx-cs-full-height {
+  height: 100%;
+}
+
+.nx-cs-y-normal {
+  height: 48px;
+}
+
+.nx-cs-y-tall {
+  height: 60px;
+}

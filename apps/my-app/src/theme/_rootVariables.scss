@@ -1,0 +1,194 @@
+:root {
+
+  /*
+   this block should be kept in sync with color-constants.ts
+  */
+
+  // Application Font
+  --bs-font-sans-serif:                Takaq, Yu Gothic UI, sans-serif !important;
+
+  // brand primary colors:
+  --takaq-blue:                      #007AC2;
+  --takaq-black:                     #000000;
+
+  // brand secondary colors:
+  --takaq-green:                     #77B800;
+  --takaq-light-blue:                #2AA9E0;
+  --takaq-bright-orange:             #F7941D;
+  --takaq-dark-orange:               #E36F1E;
+
+  // colors not in the official takaq brand guide
+  --disabled-yellow:                   #FCE883;
+  --error-red:                         red;
+  --white-background:                  white;
+  --white-text:                        white;
+  --off-white:                         #F4F4F4;
+  --silver:                            #E7E8EA;
+  --light-grey:                        #A9A9A9;
+  --gray:                              gray;
+  --muted-gray:                        #6c757d;
+  --dark-gray:                         #444444;
+  --nearly-black:                      #212529;
+  --black:                             black;
+  --create-test-header-background:     #201C1C;
+
+  --background-light-blue:             #BAD9EC;
+  --background-blue-black:             #121141;
+
+  // new colors from the Mindflow designs:
+  --mindflow-selected-blue:            #0079C1;
+  --mindflow-not-quite-black-text:     #3B4856;
+
+  --mindflow-background-color:         #FAFCFF;
+  --mindflow-disabled:                 #D8D9D8;
+  --mindflow-inactive-grey:            #D3D3D3;
+  --mindflow-light-grey:               #939598;
+  --mindflow-dark-grey:                #828483;
+  --mindflow-border-gray:              #666666;
+
+  --mindflow-table-item-alt:           #F4F6F9;
+  --mindflow-item-label:               #8B8B8B;
+  --mindflow-item-value:               #666666;
+
+  --button-text-primary:               white;
+  --button-text-action:                #00417A;
+  --button-text-cancel:                #00417A;
+  --button-text-confirm:               #0E0F11;
+  --button-text-critical:              #B2121F;
+  --button-text-navigation:            #0079C1;
+
+  --button-background-primary:         #0079C1;
+  --button-background-action:          #E5F5FF;
+  --button-background-cancel:          #ECEDEC;
+  --button-background-confirm:         white;
+  --button-background-critical:        #FFCCC7;
+  --button-background-navigation:      #E5F5FF;
+  --button-back-background-color:      var(--button-background-action);
+  --button-back-border-color:          #C7C7C7;
+
+  --input-background-color:            #F4F4F4;
+  --notes-background-color:            #ECEDEC;
+
+  --table-background-color:            #ECEDEC;
+  --table-background-alt-color:        #F4F6F9;
+
+  --container-border-color:            #C7C7C7;
+  --border-dark-grey:                  #707070;
+  --title-label-gray:                  #595959;
+
+  // ToDo: Below 5 variables need to be replaced with variables defined under Athena style guide colors
+  --success-background-green:          #E0F5C4;
+  --warning-background-orange:         #FFE7E5;
+  --message-text-color:                #0E0F11;
+  --warning-icon-color:                #DF6020;
+  --info-icon-color:                   #74A333;
+
+  // Athena style guide colors
+  --nx-color-light-black:              #0E0F11;
+  --nx-color-dark-grey:                #6F7073;
+  --nx-color-light-grey:               #D8D9D8;
+  --nx-color-lighter-grey:             #ECEDEC;
+  --nx-color-lightest-grey:            #F4F6F9;
+  --nx-color-dark-blue:                #00417A;
+  --nx-color-blue:                     #0079C1;
+  --nx-color-light-blue:               #E5F5FF;
+  --nx-color-lightest-blue:            #FAFCFF;
+
+  --nx-color-green:                    #74A333;
+  --nx-color-light-green:              #E0F5C4;
+  --nx-color-red:                      #B2121F;
+  --nx-color-orange:                   #DF6020;
+  --nx-color-pink:                     #FFE7E5;
+
+  --nx-status-positive-background:     #E0F5C4;
+  --nx-status-positive-color:          #74A333;
+  --nx-status-negative-background:     #FEE8E6;
+  --nx-status-negative-color:          #E25141;
+
+  //Takaq OS 3.x angular keyboard
+  --keyboard-container-background:       black;
+  --keyboard-key-background:             #444444;
+  --keyboard-key:                        #FFFFFF;
+  --keyboard-key-subtext:                gray;
+  --keyboard-key-highlight:              white;
+  --keyboard-key-highlight-subtext:      darkgray;
+  --keyboard-key-highlight-text:         black;
+  --keyboard-key-special-filter:         invert(100%);
+  --keyboard-key-shift-background:       #BBBBBB;
+  --keyboard-key-shift-filter:           invert(100%);
+  --keyboard-key-shift-highlight-bg:     white;
+  --keyboard-key-shift-highlight-filter: invert(0%);
+  --keyboard-key-highlight-background:   black;
+  --keyboard-key-highlight-filter:       invert(100%);
+}
+
+
+:root {
+  --background-color-body: #fafafa;
+  --color-body: rgba(0, 0, 0, 0.87);
+
+  --background-color-header: rgb(234, 234, 234);
+  --color-header: rgba(0, 0, 0, 0.87);
+
+  --background-color-footer: rgb(234, 234, 234);
+  --color-footer: rgba(0, 0, 0, 0.87);
+}
+
+/* Default */
+:root {
+  --color-primary:         #FFFFFF;
+  --background-primary:    #0079C1;
+  --width-default:         150px;
+  --height-default:        48px;
+  --font-size-default:     24px;
+  --font-weight-default:   600;
+  --border-radius-default: 5px;
+  --box-shadow-default:    1px 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* gx-button */
+:root {
+  --gx-button-color:            var(--color-primary);
+  --gx-button-background-color: var(--background-primary);
+  --gx-button-width:            var(--width-default);
+  --gx-button-height:           var(--height-default);
+  --gx-button-font-size:        var(--font-size-default);
+  --gx-button-font-weight:      var(--font-weight-default);
+  --gx-button-border-radius:    var(--border-radius-default);
+  --gx-button-box-shadow:       var(--box-shadow-default);
+}
+
+[data-theme='light'] {
+  --background-color-body: #fafafa;
+  --color-body: rgba(0, 0, 0, 0.87);
+
+  --background-color-header: rgb(234, 234, 234);
+  --color-header: var(--nx-color-dark-blue);
+
+  --background-color-footer: rgb(234, 234, 234);
+  --color-footer: rgba(0, 0, 0, 0.87);
+
+  --table-header-background-color: #EAEAEA;
+  --table-alternate-color: #EAEAEA;
+  --table-row-disabled-color: var(--light-grey);
+}
+
+[data-theme='dark'] {
+  // --background-color-body: rgba(11, 11, 11, 0.91);
+  --background-color-body: #1e293b;
+  --color-body: white;
+
+  --background-color-header: #424242;
+  --color-header: var(--light-grey);
+
+  --background-color-footer: #424242;
+  --color-footer: white;
+
+  --table-header-background-color: #666666;
+  --table-alternate-color: #666666;
+  --table-row-disabled-color: #51566f;
+}
+
+/* HT: needed to commented out
+@import "variables";
+*/

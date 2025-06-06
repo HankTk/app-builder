@@ -1,0 +1,87 @@
+/*!
+ * Copyright (c) 2019 Takaq. All Rights Reserved.
+ */
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "extendableClasses";
+@import "fontSizes";
+@import "variables";
+
+.title-panel {
+  @extend .col-12;
+}
+
+.left-panel {
+  @extend .col-7;
+}
+
+.right-panel {
+  @extend .col-5;
+}
+
+.test-title {
+  @extend .mb-0;
+  @extend .mat-display-1 !optional;
+}
+
+.test-module, .test-result-header {
+  @extend .mat-h1 !optional;
+  @extend .text-muted;
+}
+
+.test-result-header {
+  @extend .row;
+}
+
+.test-result-row {
+  @extend .row;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  margin-left: 0rem;
+}
+
+.test-info-row {
+  @extend .row;
+  @extend .pt-2;
+}
+
+.test-info-cell {
+  @extend .col-6;
+  display: flex !important;
+  flex-direction: column;
+  word-wrap: break-word; // allows continuous strings to break in the cells
+}
+
+.test-info-cell-4 {
+  @extend .col-4;
+  display: flex !important;
+  flex-direction: column;
+  word-wrap: break-word; // allows continuous strings to break in the cells
+}
+
+.test-info-cell-title {
+  @extend .mat-subheading-2 !optional;
+  @extend .text-muted;
+}
+
+.test-info-cell-text {
+  @extend .mat-h1 !optional;
+  @extend .pt-2;
+  line-height: 25px !important; // helps with broken line spacing
+}
+
+.test-info-small-text {
+  @extend .mat-subheading-2 !optional;
+}
+
+.test-result-text {
+  @extend .mat-h4-medium !optional;
+}
+
+.button-container {
+  @extend .row;
+  @extend .pt-3;
+  @extend .font-medium;
+}

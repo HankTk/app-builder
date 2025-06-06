@@ -1,0 +1,160 @@
+/*!
+ * Copyright (c) 2019-2022 Takaq. All Rights Reserved.
+ */
+
+$takaq-font-family: Cepheid, Yu Gothic UI, sans-serif;
+
+// mat requires special treatment: it wants the entire variable as a string
+$mat-takaq-font-family: 'Cepheid, Yu Gothic UI, sans-serif';
+
+$font-weight-thin:    100;
+$font-weight-light:   300;
+$font-weight-regular: 400;
+$font-weight-medium:  500;
+$font-weight-bold:    700;
+$font-weight-black:   900;
+
+$font-size-45px:      45px;
+$font-size-42px:      42px;
+$font-size-38px:      38px;
+$font-size-largest:   36px;
+$font-size-huge:      32px;
+$font-size-xl:        30px;
+$font-size-large:     28px;
+$font-size-medium:    24px;
+$font-size-small:     20px;
+$font-size-18px:      18px;
+$font-size-xs:        16px;
+$font-size-xxs:       12px;
+
+$box-size-largest:    36px;
+$box-size-huge:       32px;
+$box-size-xl:         30px;
+$box-size-large:      28px;
+$box-size-medium:     24px;
+$box-size-small:      20px;
+$box-size-xs:         16px;
+
+// definitions for mat-typography-config
+$takaq-display-4:    ('font-size':112px,   'line-height':112px, 'font-weight': $font-weight-light);
+$takaq-display-3:    ('font-size':56px,    'line-height':56px,  'font-weight': $font-weight-regular);
+$takaq-display-2:    ('font-size':45px,    'line-height':48px,  'font-weight': $font-weight-bold);    // used to be "mat-h3". angular mat-h3 is much smaller. Now mat-display-2
+$takaq-display-1:    ('font-size':34px,    'line-height':40px,  'font-weight': $font-weight-bold);    // used to be "mat-h4". angular mat-h4 is much smaller, previously used for biggest title. Now mat-display-1
+$takaq-headline:     ('font-size':24px,    'line-height':32px,  'font-weight': $font-weight-regular); // used to be "mat-h5" -> mat-h1
+$takaq-title:        ('font-size':20px,    'line-height':32px,  'font-weight': $font-weight-bold);    // "h6-bold" -> mat-h2. changed fontweight
+$takaq-subheading-2: ('font-size':16px,    'line-height':28px,  'font-weight': $font-weight-black);   // subtitle1 -> h3/subheading-2
+$takaq-subheading-1: ('font-size':14px,    'line-height':24px,  'font-weight': $font-weight-medium);  // subtitle2 -> h4/subheading-1
+$takaq-body-2:       ('font-size':14px,    'line-height':24px,  'font-weight': $font-weight-medium);
+$takaq-body-1:       ('font-size':14px,    'line-height':20px,  'font-weight': $font-weight-regular);
+$takaq-caption:      ('font-size':12px,    'line-height':20px,  'font-weight': $font-weight-regular);
+$takaq-button:       ('font-size':15px,    'line-height':15px,  'font-weight': $font-weight-medium);
+
+// Line-height must be unit-less fraction of the font-size.
+$takaq-input:        ('font-size':inherit, 'line-height':1.125, 'font-weight': $font-weight-regular);
+
+
+/*
+ this block should be kept in sync with color-constants.ts
+*/
+// brand primary colors:
+$takaq-blue:                      var(--takaq-blue);
+$takaq-black:                     var(--takaq-black);
+
+// brand secondary colors:
+$takaq-green:                     var(--takaq-green);
+// todo: this is still used as a string instead of a variable in :hover elements
+$takaq-light-blue:                var(--takaq-light-blue);
+$takaq-bright-orange:             var(--takaq-bright-orange);
+$takaq-dark-orange:               var(--takaq-dark-orange);
+
+// colors not in the official takaq brand guide
+$disabled-yellow:                   var(--disabled-yellow);
+$error-red:                         var(--error-red);
+$white-background:                  var(--white-background);
+$white-text:                        var(--white-text);
+$off-white:                         var(--off-white);
+$silver:                            var(--silver);
+$light-grey:                        var(--light-grey);
+$gray:                              var(--gray);
+$muted-gray:                        var(--muted-gray);
+$dark-gray:                         var(--dark-gray);
+$nearly-black:                      var(--nearly-black);
+/*
+$black:                             var(--black);
+*/
+$black:                             #000000;
+$create-test-header-background:     var(--create-test-header-background);
+
+$background-light-blue:             var(--background-light-blue);
+$background-blue-black:             var(--background-blue-black);
+
+// new colors from the Mindflow designs:
+$mindflow-selected-blue:            var(--mindflow-selected-blue);
+$mindflow-not-quite-black-text:     var(--mindflow-not-quite-black-text);
+
+$mindflow-background-color:         var(--mindflow-background-color);
+$mindflow-disabled:                 var(--mindflow-disabled);
+$mindflow-inactive-grey:            var(--mindflow-inactive-grey);
+$mindflow-light-grey:               var(--mindflow-light-grey);
+$mindflow-dark-grey:                var(--mindflow-dark-grey);
+$mindflow-border-gray:              var(--mindflow-border-gray);
+
+$mindflow-table-item-alt:           var(--mindflow-table-item-alt);
+$mindflow-item-label:               var(--mindflow-item-label);
+$mindflow-item-value:               var(--mindflow-item-value);
+
+$button-text-primary:               var(--button-text-primary);
+$button-text-action:                var(--button-text-action);
+$button-text-cancel:                var(--button-text-cancel);
+$button-text-confirm:               var(--button-text-confirm);
+$button-text-critical:              var(--button-text-critical);
+$button-text-navigation:            var(--button-text-navigation);
+
+$button-background-primary:         var(--button-background-primary);
+$button-background-action:          var(--button-background-action);
+$button-background-cancel:          var(--button-background-cancel);
+$button-background-confirm:         var(--button-background-confirm);
+$button-background-critical:        var(--button-background-critical);
+$button-background-navigation:      var(--button-background-navigation);
+$button-back-background-color:      var(--button-back-background-color);
+$button-back-border-color:          var(--button-back-border-color);
+
+$input-background-color:            var(--input-background-color);
+$notes-background-color:            var(--notes-background-color);
+
+$table-background-color:            var(--table-background-color);
+$table-background-alt-color:        var(--table-background-alt-color);
+
+$container-border-color:            var(--container-border-color);
+$border-dark-grey:                  var(--border-dark-grey);
+$title-label-gray:                  var(--title-label-gray);
+
+// ToDo: Below 5 variables need to be replaced with variables defined under Athena style guide colors
+
+$success-background-green:          var(--success-background-green);
+$warning-background-orange:         var(--warning-background-orange);
+$message-text-color:                var(--message-text-color);
+$warning-icon-color:                var(--warning-icon-color);
+$info-icon-color:                   var(--info-icon-color);
+
+// Athena style guide colors
+$nx-color-light-black:              var(--nx-color-light-black);
+$nx-color-dark-grey:                var(--nx-color-dark-grey);
+$nx-color-light-grey:               var(--nx-color-light-grey);
+$nx-color-lighter-grey:             var(--nx-color-lighter-grey);
+$nx-color-lightest-grey:            var(--nx-color-lightest-grey);
+$nx-color-dark-blue:                var(--nx-color-dark-blue);
+$nx-color-blue:                     var(--nx-color-blue);
+$nx-color-light-blue:               var(--nx-color-light-blue);
+$nx-color-lightest-blue:            var(--nx-color-lightest-blue);
+
+$nx-color-green:                    var(--nx-color-green);
+$nx-color-light-green:              var(--nx-color-light-green);
+$nx-color-red:                      var(--nx-color-red);
+$nx-color-orange:                   var(--nx-color-orange);
+$nx-color-pink:                     var(--nx-color-pink);
+
+$nx-status-positive-background:     var(--nx-status-positive-background);
+$nx-status-positive-color:          var(--nx-status-positive-color);
+$nx-status-negative-background:     var(--nx-status-negative-background);
+$nx-status-negative-color:          var(--nx-status-negative-color);

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40">
+<defs>
+
+<symbol id="close-keyboard" viewBox="0 0 40 40">
+<path d="m40,10.99v16.02c0,1.1-.9,1.99-2,1.99H2c-1.11,0-2-.89-2-1.99V10.99c0-1.1.9-1.99,2-1.99h35.99c1.11,0,2,.89,2,1.99ZM2,23v4h5v-4H2Zm7,0v4h22v-4H9Zm-7-6v4h5v-4H2Zm7,0v4h4v-4h-4Zm6,0v4h4v-4h-4Zm6,0v4h4v-4h-4Zm6,0v4h4v-4h-4ZM2,11v4h5v-4H2Zm7,0v4h4v-4h-4Zm6,0v4h4v-4h-4Zm6,0v4h4v-4h-4Zm6,0v4h4v-4h-4Zm6,0v4h5v-4h-5Zm0,12v4h5v-4h-5Zm0-6v4h5v-4h-5Zm-23,14.67l10,8.33,10-8.33H10Z"/>
+</symbol>
+
+</defs>
+<use width="40" height="40" xlink:href="#close-keyboard"/>
+</svg>

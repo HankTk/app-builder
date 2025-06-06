@@ -1,0 +1,70 @@
+/*!
+ * Copyright (c) 2019-2022 Takaq. All Rights Reserved.
+ */
+
+// @import 'node_modules/@angular/material/theming';
+@import "variables";
+
+// Overriding material-ui scss
+
+@mixin nx-input {
+
+  ::ng-deep mat-form-field {
+    font-size: $font-size-18px!important;
+  }
+
+  ::ng-deep .mat-form-field-outline-gap {
+    width: 0!important;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.6em) scale(1)!important;
+    font-size: 14px;
+  }
+
+  ::ng-deep mat-form-field mat-label  {
+    background-color: $white-background;
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 9px 0!important;
+    border-top: 0;
+  }
+
+  ::ng-deep input.mat-input-element{
+    margin-top: 10px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-label-wrapper {
+    top: -2px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-label{
+    top: 25px;
+    height: 22px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: $white-background;
+  }
+
+  /* Error-Validation style */
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+    padding: 0 12px;
+    font-size: 14px;
+    margin-top: 2px;
+    height: 17px;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-placeholder-required {
+    background-color: $white-background;
+    padding-right: 4px;
+  }
+
+  ::ng-deep .mat-form-field-wrapper .mat-input-element{
+    height: 100% !important;
+  }
+
+}

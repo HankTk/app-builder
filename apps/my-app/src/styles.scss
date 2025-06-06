@@ -1,0 +1,230 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "sass:map";
+@use "@angular/material" as mat;
+@use './theme/rootVariables' as root;
+
+/* ======
+mat.$theme-ignore-duplication-warnings: true;
+*/
+
+@include mat.core();
+
+/* ------------------------------------------------------------------------------------------ */
+/* Load google's Roboto font                                                                  */
+/* More information can be found here                                                         */
+/* @see https://material.io/design/typography/#type-scale                                     */
+/* @see https://gist.github.com/amlang/c82496a3b36050616e99963d23c5d291                       */
+/* @see https://material.io/                                                                  */
+/* @see https://github.com/material-components/material-components-web/blob/master/LICENSE    */
+/* ------------------------------------------------------------------------------------------ */
+
+/*
+ * html, body, Shared Styles
+ */
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  :not(input):not(textarea) {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+  }
+}
+
+/* Reboot */
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Remove Scrollbar */
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/**
+  Color Palette
+**/
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+$color-palette: (
+    50 : #e0eff8,
+    100 : #b3d7ed,
+    200 : #80bde1,
+    300 : #4da2d4,
+    400 : #268ecb,
+    500 : #007ac2,
+    600 : #0072bc,
+    700 : #0067b4,
+    800 : #005dac,
+    900 : #004a9f,
+    A100 : #c9dfff,
+    A200 : #96c0ff,
+    A400 : #63a1ff,
+    A700 : #4a91ff,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text,
+    )
+);
+
+
+/*
+  Theme
+ */
+
+/* ========================================================================================
+// Define a light theme
+$light-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: mat.define-palette(mat.$indigo-palette),
+        accent: mat.define-palette(mat.$pink-palette),
+        !*
+        primary: mat.define-palette($color-palette),
+        accent: mat.define-palette($color-palette),
+        *!
+      ),
+
+      // Set the default typography
+      typography:
+      mat.define-typography-config(
+        $font-family: $mat-takaq-font-family,
+        $headline-1: mat.define-typography-level($takaq-display-4...),
+        $headline-2: mat.define-typography-level($takaq-display-3...),
+        $headline-3: mat.define-typography-level($takaq-display-2...),
+        $headline-4: mat.define-typography-level($takaq-display-1...),
+        $headline-5: mat.define-typography-level($takaq-headline...),
+        $headline-6: mat.define-typography-level($takaq-title...),
+        $subtitle-1: mat.define-typography-level($takaq-subheading-2...),
+        $subtitle-2: mat.define-typography-level($takaq-subheading-1...),
+        $body-2: mat.define-typography-level($takaq-body-2...),
+        $body-1: mat.define-typography-level($takaq-body-1...),
+        $button: mat.define-typography-level($takaq-button...),
+      ),
+      density: 0,
+
+    )
+);
+
+// Define a dark theme
+$dark-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: mat.define-palette(mat.$purple-palette),
+        accent: mat.define-palette(mat.$deep-purple-palette),
+        !*
+        primary: mat.define-palette($color-palette),
+        accent: mat.define-palette($color-palette),
+        *!
+      ),
+
+      // Set the default typography
+      typography:
+      mat.define-typography-config(
+        $font-family: $mat-takaq-font-family,
+        $headline-1: mat.define-typography-level($takaq-display-4...),
+        $headline-2: mat.define-typography-level($takaq-display-3...),
+        $headline-3: mat.define-typography-level($takaq-display-2...),
+        $headline-4: mat.define-typography-level($takaq-display-1...),
+        $headline-5: mat.define-typography-level($takaq-headline...),
+        $headline-6: mat.define-typography-level($takaq-title...),
+        $subtitle-1: mat.define-typography-level($takaq-subheading-2...),
+        $subtitle-2: mat.define-typography-level($takaq-subheading-1...),
+        $body-2: mat.define-typography-level($takaq-body-2...),
+        $body-1: mat.define-typography-level($takaq-body-1...),
+        $button: mat.define-typography-level($takaq-button...),
+      ),
+      density: 0,
+
+    )
+);
+======================================================================================== */
+
+.color-scheme-light {
+  /*
+  @include mat.core-color($light-theme);
+  @include mat.button-color($light-theme);
+  @include mat.fab-color($light-theme);
+  @include mat.icon-color($light-theme);
+  @include mat.list-color($light-theme);
+  @include mat.sidenav-color($light-theme);
+  @include mat.toolbar-color($light-theme);
+  @include mat.card-color($light-theme);
+  @include mat.menu-color($light-theme);
+  @include mat.input-color($light-theme);
+  @include mat.input-color($light-theme);
+  */
+  /* =========================
+  @include mat.all-component-themes($light-theme);
+  ========================= */
+
+  // Example how you can easy add own custom styles
+  .card-wrapper {
+    color: #2d2d2d;
+  }
+}
+
+.color-scheme-dark {
+  /*
+  @include mat.core-color($dark-theme);
+  @include mat.button-color($dark-theme);
+  @include mat.fab-color($dark-theme);
+  @include mat.icon-color($dark-theme);
+  @include mat.list-color($dark-theme);
+  @include mat.sidenav-color($dark-theme);
+  @include mat.toolbar-color($dark-theme);
+  @include mat.card-color($dark-theme);
+  @include mat.menu-color($dark-theme);
+  @include mat.input-color($dark-theme);
+  */
+  /* =========================
+  @include mat.all-component-themes($dark-theme);
+  ========================= */
+
+  // Example how you can easy add own custom styles
+  .card-wrapper {
+    color: #d0d0d0;
+  }
+}
+
+/*
+  Shared Style
+ */
+/* HT: needed to commented out
+@import 'sharedStyles';
+*/
+
+
+/* Overwrite the styles of the mat-dialog-container element globally, but only for those
+that have an id of `modal-component` */
+/* https://stackoverflow.com/a/48689004/9263761 */
+mat-dialog-container#app-event-edit {
+  border: 3px solid #262626;
+  border-radius: 11px;
+  background-color: #1a1a1a;
+}

@@ -1,0 +1,39 @@
+<mat-nav-list>
+
+  <h3 matSubheader style="padding-left: 1rem;">Application Menu</h3>
+
+<!--
+  @for (theme of themes; track theme.name)
+  {
+    <mat-list-item (click)="setTheme(theme.name)">
+      <div class="d-flex flex-row">
+        <mat-icon mat-list-icon class="me-2">
+          {{ theme.icon }}
+        </mat-icon>
+        <div matLine class="me-2">
+          {{ theme.name }}
+        </div>
+        @if (colorSchemeService.currentActive() === theme.name)
+        {
+          <mat-icon class="me-2">
+            {{'check'}}
+          </mat-icon>
+        }
+      </div>
+    </mat-list-item>
+  }
+-->
+
+  <ul class="navigation"
+      (click)="onItemSelect($event)">
+
+    <li routerLink="/home">
+      <a routerLinkActive="active">Home</a>
+    </li>
+    <li routerLink="/nrwl" >
+      <a routerLinkActive="active">Nrwl</a>
+    </li>
+
+  </ul>
+
+</mat-nav-list>

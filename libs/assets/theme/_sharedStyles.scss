@@ -1,0 +1,325 @@
+/*!
+ * Copyright (c) 2019-2023 Takaq. All Rights Reserved.
+ */
+
+@import 'fontFaces';
+@import 'fontSizes';
+
+@import 'controlSizes';
+@import 'sharedSpacing';
+@import 'extendableClasses';
+@import 'typography';
+@import 'variables';
+
+.app-container {
+  background-color: $mindflow-background-color;
+  padding-bottom: 20px;
+}
+
+.cdk-overlay-pane {
+  max-width: 100% !important;
+}
+
+.continue-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $takaq-blue;
+  border: solid 1px $takaq-blue;
+  width: 100%;
+  height: 50px;
+  color: $white-text;
+  border-radius: 8px;
+  margin-right: 50px;
+}
+
+.input-border-none {
+  border: none;
+}
+
+.input-error {
+  color: $error-red;
+}
+
+.input-text {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 1px solid $gray;
+  border-radius: 0;
+}
+
+.inner-container {
+  padding: 25px 50px 50px;
+  background-color: $white-background !important;
+  box-shadow: 0 30px 20px -15px rgba(0, 0, 0, 0.2);
+}
+
+.md-dialog-container {
+  background-color: $white-background;
+  width: 800px;
+  height: 600px
+}
+
+.sm-dialog-container {
+  background-color: $white-background;
+  width: 450px;
+  height: 120px
+}
+
+/*
+  Dialog Basic Container
+*/
+.dialog-basic-container-class .mat-dialog-container {
+  background-color: $silver;
+  color: $dark-gray;
+  border: solid 2px $background-blue-black;
+  border-radius: 10px;
+  padding: 20px;
+  width: 800px;
+  height: 600px
+}
+
+.mat-dialog-content {
+  white-space: pre-line; // preserve '\n' line breaks
+}
+
+/*
+  Login and Scan ID Card components
+ */
+.form-signin {
+  width: 100%;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.input-login-group {
+  margin-top: 10px;
+}
+
+.login-field ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 1em 0;
+  height: 42px;
+  padding-bottom: 63px;
+}
+
+.form-control {
+  box-shadow: none !important;
+}
+
+.container-wide {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.gx-table {
+  table-layout: auto;
+}
+
+.gx-table thead th {
+  border: none !important;
+}
+
+.gx-table thead th:hover {
+  cursor: pointer;
+}
+
+.gx-table tbody th {
+  vertical-align: middle;
+}
+
+.gx-table tbody td {
+  vertical-align: middle;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.gx-table tbody td.wrappable {
+  word-break: break-word;
+}
+
+.gx-table.top-align-table tbody td {
+  vertical-align: top;
+}
+
+.gx-table-hover tbody tr:hover {
+  cursor: pointer;
+}
+
+.right-arrow {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 42px;
+  font-weight: bold;
+  color: $takaq-light-blue;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.float-right {
+  float: right
+}
+
+.image-width {
+  height: 35px;
+  margin-right: 12px;
+}
+
+.filter_label_adjustment #filter_label {
+  margin-top: 0.5rem;
+}
+
+// the following match the app.component.ts file constants
+$small_osk_height: 225px;
+$medium_osk_height: 350px;
+$large_osk_height: 500px;
+
+.osk-padding-small {
+  padding-bottom: $small_osk_height;
+}
+
+.osk-padding-medium {
+  padding-bottom: $medium_osk_height;
+}
+
+.osk-padding-large {
+  padding-bottom: $large_osk_height;
+}
+
+.with-new-line-break {
+  white-space: pre-line;
+  text-align: start
+}
+
+.max-character {
+  word-break: break-word;
+  white-space: normal !important;
+}
+
+.max-ellipses {
+  width: 100% !important;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap !important;
+  text-overflow: ellipsis;
+  padding: auto 10px;
+  margin: 0px;
+}
+
+.max-ellipses-multiline {
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+/*
+  For Shared Spinner
+ */
+.backdropBackground {
+  opacity: 0.0;
+  background-color: rgba(205, 205, 205, 0.2);
+}
+.shared-spinner-dialog > mat-dialog-container {
+  box-shadow: none !important;
+  background: none !important;
+  background-color: transparent;
+}
+
+/*
+    Scrollbar
+ */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+/* Thumb */
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  background-color: #aeaeae;
+}
+
+/*
+  Common page container style
+*/
+.page-component-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px 25px;
+
+  .page-header-container {
+    margin-bottom: 10px;
+  }
+}
+
+/*
+  Global Style
+*/
+.commonDialogTextHighlight{
+  color: $nx-color-red;
+}
+
+.container-width-shadow {
+  border-radius: 5px;
+  background-color: $white;
+  box-shadow: 0 2px 10px rgba(0,0,0,.16);
+  // box-shadow: 0 0px 3px rgba(0, 0, 0, 0.06), 0 8px 12px rgba(0, 0, 0, 0.03), 0 0px 24px rgba(0, 0, 0, 0.04);
+}
+
+.cdk-global-overlay-wrapper {
+  pointer-events: auto !important;
+}
+
+.select-overlay-regional-language .cdk-overlay-pane {
+  position: absolute !important;
+  top: 500px !important;
+}
+.select-overlay-regional-timezone .cdk-overlay-pane {
+  position: absolute !important;
+  top: 530px !important;
+
+  .mat-select-panel {
+    max-width: unset !important;
+  }
+
+}
+
+.select-overlay-general-settings-timezone .cdk-overlay-pane .mat-select-panel {
+  max-width: unset !important;
+  position: absolute !important;
+  right: -30px;
+}
+
+.select-overlay-network-drive-settings .cdk-overlay-pane {
+  .mat-option {
+    padding: 0px 14px !important;
+  }
+}

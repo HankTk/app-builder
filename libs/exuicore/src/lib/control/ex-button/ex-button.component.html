@@ -1,0 +1,19 @@
+<button
+    mat-button
+    [id]="id"
+    class="gx-button btn traditional-button"
+    [color]="color"
+    [disabled]="disabled"
+    [ngClass]="nxClass"
+    [ngStyle]='styleObject'
+    (click)="onClick($event)">
+
+    <mat-icon
+        *ngIf="icon !== ''"
+        class="gx-button-icon">
+        {{icon}}
+    </mat-icon>
+
+    {{displayText + (labelNumber <= 0 ? '' : ' (' + labelNumber + ') ')}}
+
+</button>

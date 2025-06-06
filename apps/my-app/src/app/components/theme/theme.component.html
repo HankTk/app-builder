@@ -1,0 +1,43 @@
+<mat-drawer-container
+  [class.drawer-opened]="drawer.opened"
+  class="example-container"
+  style="background-color: transparent">
+
+  <mat-drawer
+    #drawer
+    class="drawer"
+    mode="side"
+    opened="false"
+    position="end">
+
+    <mat-toolbar class="header" color="primary">
+      <div class="ps-3">Settings</div>
+      <mat-icon
+        class="close"
+        (click)="drawer.close()"
+        style="position: relative; right: 1rem;">
+        close
+      </mat-icon>
+    </mat-toolbar>
+    <div class="contents">
+      <app-setting-change-color-scheme>
+      </app-setting-change-color-scheme>
+    </div>
+  </mat-drawer>
+
+  <button
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="!drawer.opened">
+    <mat-icon>settings</mat-icon>
+  </button>
+
+  <!--
+  <mat-icon
+    *ngIf="!drawer.opened"
+    (click)="drawer.toggle()">
+    menu
+  </mat-icon>
+  -->
+
+</mat-drawer-container>

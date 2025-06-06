@@ -1,0 +1,60 @@
+/*!
+ * Copyright (c) 2022 Takaq. All Rights Reserved.
+ */
+
+@import "variables";
+
+.nx-color-text {
+  color: $nx-color-light-black;
+}
+
+.nx-color-label,
+.nx-color-disabled {
+  color: $nx-color-dark-grey;
+}
+
+.nx-color-border {
+  color: $nx-color-light-grey;
+}
+
+.nx-color-table-header-background {
+  background-color: $nx-color-lighter-grey;
+}
+
+.nx-color-table-row-background {
+  background-color: $nx-color-lightest-grey;
+}
+
+.nx-color-primary-action {
+  color: $white-text;
+  background-color: $nx-color-blue;
+}
+
+.nx-color-highlight {
+  color: $nx-color-blue;
+}
+
+.nx-color-secondary-action {
+  color: $nx-color-dark-blue;
+  background-color: $nx-color-light-blue;
+}
+
+.nx-color-success {
+  color: $nx-color-green;
+}
+
+.nx-color-success-background {
+  background-color: $nx-color-light-green;
+}
+
+.nx-color-warning {
+  color: $nx-color-orange;
+}
+
+.nx-color-error {
+  color: $nx-color-red;
+}
+
+.nx-color-error-background {
+  background-color: $nx-color-pink;
+}

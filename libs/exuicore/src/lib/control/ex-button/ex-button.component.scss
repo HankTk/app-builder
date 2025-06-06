@@ -1,0 +1,22 @@
+/*!
+ * Copyright (c) 2019-2021 Takaq. All Rights Reserved.
+ */
+
+.ex-button {
+  width: 100%;
+  height: 100%;
+
+  .ex-button-icon {
+    margin-right: 4px;
+  }
+
+}
+
+.ex-delete-add-button {
+  width: 100%;
+  height: 48px;
+}
+
+:host ::ng-deep button * {
+  pointer-events: none;
+}

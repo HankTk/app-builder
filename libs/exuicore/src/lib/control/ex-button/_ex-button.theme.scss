@@ -1,0 +1,443 @@
+/*!
+ * Copyright (c) 2023 Takaq. All Rights Reserved.
+ */
+
+// @import '../../../../../../node_modules/@angular/material/theming';
+@import '../../../../../assets/theme/variables';
+@import '../../../../../assets/theme/fontSizes';
+@import '../../../../../assets/theme/controlSizes';
+
+@mixin border-radius {
+  border-radius: 8px !important;
+}
+
+@mixin basic-button-shape {
+  border-style: solid;
+  border-width: 1px;
+  @include border-radius;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+@mixin outline-button-shape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+  @include border-radius;
+  box-shadow: 0 0 0 0 !important;
+  cursor: pointer;
+}
+
+@mixin new-test-shape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $takaq-green !important;
+  color: $white-text;
+  @include border-radius;
+}
+
+@mixin start-test-shape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $takaq-blue !important;
+  color: $white-text;
+  @include border-radius;
+}
+
+.traditional-button {
+  @include basic-button-shape;
+  background-color: $takaq-blue;
+  border-color: $takaq-blue;
+  color: $white-text;
+}
+
+.traditional-button:disabled, .new-test-button:disabled, .start-new-test-button:disabled {
+  color: $nearly-black;
+  background-color: $gray;
+  border-color: $gray;
+  cursor: default;
+}
+
+.cancel-test-button {
+  @include basic-button-shape;
+  white-space: normal;
+  background-color: $create-test-header-background;
+  border-color: $create-test-header-background;
+  color: $error-red;
+}
+
+.outline-button {
+  @include outline-button-shape;
+  border-color: $takaq-blue !important;
+  color: $takaq-blue;
+}
+
+.outline-button-red {
+  @include outline-button-shape;
+  border-color: $error-red !important;
+  color: $error-red;
+}
+
+.outline-confirm-button {
+  @include outline-button-shape;
+  background-color: $takaq-blue;
+  border-width: 1.5px !important; // note: this is different from outline
+  border-color: $takaq-blue !important;
+  color: $white-text;
+}
+
+.outline-button:disabled {
+  background-color: $gray;
+  color: $white-text;
+  border-width: 1.5px !important;
+  border-color: $gray !important;
+  cursor: default;
+}
+
+.traditional-red-button {
+  @include basic-button-shape;
+  background-color: $error-red;
+  border-color: $error-red;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.outline-red-button {
+  @include outline-button-shape;
+  border-color: $error-red !important;
+  border-width: 1px !important; // note: non-standard
+  color: $error-red;
+  background-color: $white-background;
+}
+
+
+.outline-red-button:disabled {
+  background-color: $off-white;
+  border-color: $gray !important;
+  color: $gray;
+  cursor: default;
+}
+
+.new-test-button {
+  @include new-test-shape;
+  border-style: none !important;
+  height: 60px;
+  font-size: 30px !important; // counters mat-button
+}
+
+.start-test-button {
+  @include start-test-shape;
+  border-style: none !important;
+  height: 60px;
+  font-size: 30px !important; // counters mat-button
+}
+
+.start-new-test-button {
+  @include new-test-shape;
+  font-size: 36px;
+  border: solid 2px $takaq-green;
+}
+
+.new-test-non-host-order-button {
+  @include new-test-shape;
+  border-style: none !important;
+  width: 100%;
+  height: 50px;
+  margin-right: 50px;
+}
+
+.host-order-button {
+  height: 48px;
+  cursor: pointer;
+}
+
+.host-order-red-button {
+  background-color: $error-red;
+  border: solid 1px $error-red;
+  color: $white-text;
+  height: 48px;
+  cursor: pointer;
+}
+
+.font-size-inherit {
+  font-size: inherit !important;
+}
+
+.button-normal {
+  width: 150px;
+  height: 48px;
+}
+
+.btn-width-60 {
+  width: 60%;
+}
+
+.btn-full-width {
+  width: 100%;
+}
+
+.btn-x-narrow {
+  width: 120px;
+}
+
+.btn-x-normal {
+  width: 180px;
+}
+
+.btn-x-medium {
+  width: 208px;
+}
+
+.btn-x-long {
+  width: 250px;
+}
+
+.btn-x-xlong {
+  width: 300px;
+}
+
+.btn-full-height {
+  height: 100%;
+}
+
+.btn-y-normal {
+  height: 48px;
+}
+
+.btn-y-tall {
+  height: 60px;
+}
+
+.mat-mdc-button {
+  white-space: normal !important;
+  line-height: 1.5rem !important;
+}
+
+/*
+  Navigation Button Styles
+ */
+@mixin nx-btn-navigation {
+  @include basic-button-shape;
+  border-radius: 5px !important;
+  cursor: pointer;
+  background-color: $button-background-navigation !important;
+  color: $button-text-navigation !important;
+
+  // Override traditional-button
+  border: none !important;
+
+  :disabled {
+    color: $nearly-black;
+    background-color: $gray;
+    border-color: $gray;
+    cursor: default;
+  }
+}
+
+@mixin nx-btn-enabled {
+  font-weight: 600;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin nx-btn-disabled {
+  font-weight: normal;
+  box-shadow: none;
+}
+
+.nx-btn-navigation-normal {
+  @include nx-btn-navigation;
+  @include nx-btn-enabled;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  color: $button-text-action !important;
+  .mat-icon {
+    /*
+    transform: translate(-10px,0);
+    */
+    font-size: 36px;
+    width: unset;
+    height: unset;
+    font-weight: bold;
+  }
+}
+
+.nx-btn-navigation-small {
+  @include nx-btn-navigation;
+  @include nx-btn-enabled;
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  color: $button-text-action !important;
+  .mat-icon {
+    /*
+    transform: translateX(-10px);
+    */
+    font-weight: bold;
+  }
+}
+
+/*
+  Navigation Button Styles
+ */
+@mixin nx-btn {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px !important;
+  text-decoration: none;
+  font-size: $font-size-small;
+
+  // Override traditional-button
+  border: none !important;
+}
+
+.nx-btn-primary {
+  @include nx-btn;
+  @include nx-btn-enabled;
+  box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2) ;
+  color: $white-text !important;
+  background-color: $button-background-primary;
+}
+.nx-btn-primary:disabled {
+  @include nx-btn;
+  @include nx-btn-disabled;
+  color: $white-text !important;
+  background-color: $button-background-primary;
+  cursor: default;
+}
+
+.nx-btn-secondary {
+  @include nx-btn;
+  @include nx-btn-enabled;
+  color: $button-text-action !important;
+  background-color: $button-background-action;
+}
+.nx-btn-secondary:disabled {
+  @include nx-btn;
+  @include nx-btn-disabled;
+  color: $button-text-action !important;
+  background-color: $button-background-action !important;
+  box-shadow: none;
+  cursor: default;
+}
+
+.nx-btn-tertiary {
+  @include nx-btn;
+  @include nx-btn-enabled;
+  color: $button-text-cancel !important;
+  background-color: $button-background-cancel;
+}
+.nx-btn-tertiary:disabled {
+  @include nx-btn;
+  @include nx-btn-disabled;
+  color: $button-text-cancel !important;
+  background-color: $button-background-cancel;
+  box-shadow: none;
+  cursor: default;
+}
+
+.nx-btn-neutral {
+  @include nx-btn;
+  @include nx-btn-enabled;
+  color: $button-text-confirm !important;
+  background-color: $button-background-confirm;
+  border: 1px solid $mindflow-disabled !important;
+}
+.nx-btn-neutral:disabled {
+  @include nx-btn;
+  @include nx-btn-disabled;
+  color: $button-text-confirm !important;
+  background-color: $button-background-confirm;
+  border: 1px solid $mindflow-disabled !important;
+  cursor: default;
+}
+
+.nx-btn-critical {
+  @include nx-btn;
+  @include nx-btn-enabled;
+  color: $button-text-critical !important;
+  background-color: $button-background-critical;
+}
+.nx-btn-critical:disabled {
+  @include nx-btn;
+  @include nx-btn-disabled;
+  color: $button-text-critical !important;
+  background-color: $button-background-critical;
+  cursor: default;
+}
+
+.nx-btn-link {
+  @include nx-btn;
+  color: $button-background-primary;
+  background: none!important;
+  border: none;
+  // Override traditional-button
+  box-shadow: none !important;
+  // text-decoration: underline;
+}
+.nx-btn-link:disabled {
+  @include nx-btn;
+  color: $button-background-primary;
+  background: none!important;
+  cursor: default;
+  // Override traditional-button
+  box-shadow: none !important;}
+
+.nx-btn-icon {
+  @include nx-btn;
+  @include nx-btn-enabled;
+  color: $button-background-primary;
+  background: unset;
+  border: none;
+}
+.nx-btn-icon:disabled {
+  @include nx-btn;
+  @include nx-btn-disabled;
+  color: $button-background-primary;;
+  background: unset;
+  cursor: default;
+}
+
+.nx-btn-positive {
+  @include nx-btn;
+  @include nx-btn-enabled;
+  color: $nx-color-blue !important;
+  background-color: $nx-status-positive-background !important;
+  border: none !important;
+  .ex-button-icon {
+    color: $nx-status-positive-color !important;
+  }
+}
+
+.nx-btn-negative {
+  @include nx-btn;
+  @include nx-btn-enabled;
+  color: $nx-color-blue !important;
+  background-color: $nx-status-negative-background !important;
+  cursor: default !important;
+  .ex-button-icon {
+    color: $nx-status-negative-color !important;
+  }
+}
+
+.nx-btn-toggle {
+  @include nx-btn;
+  color: $mindflow-selected-blue;
+  background: none!important;
+  border: none;
+  // Override traditional-button
+  box-shadow: none !important;
+  // text-decoration: underline;
+}
+.nx-btn-toggle:disabled {
+  @include nx-btn;
+  color: $mindflow-light-grey;
+  background: none!important;
+  cursor: default;
+  // Override traditional-button
+  box-shadow: none !important;
+}
