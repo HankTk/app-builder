@@ -1,24 +1,43 @@
-# Nxwork19 - Angular Application
+# Application Builder - Angular Application
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-This is an Angular application built with Nx, a powerful build system with first-class monorepo support and powerful integrations.
+## Overview
+
+This is a modern Angular application built with Nx, a powerful build system that provides first-class monorepo support and powerful integrations. The application is designed to be scalable, maintainable, and follows best practices for enterprise-level development.
+
+## Features
+
+- 🚀 Built with Angular and Nx
+- 📦 Monorepo architecture
+- 🎨 Material Design integration
+- 🖥️ Electron support for desktop deployment
+- 🧪 Comprehensive testing setup
+- 🔄 Nx Cloud integration for enhanced build performance
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v16 or later)
+- npm (v7 or later) or yarn (v1.22 or later)
+- Git
 
 ## Getting Started
 
-### Prerequisites
-- Node.js (v16 or later)
-- npm or yarn
-
 ### Installation
 
-1. Clone the repository
+1. Clone the repository:
+```sh
+git clone [repository-url]
+cd app-builder
+```
+
 2. Install dependencies:
 ```sh
 npm install
 ```
 
-## Development
+### Development
 
 To start the development server:
 
@@ -28,48 +47,17 @@ npx nx serve appdemo
 
 The application will be available at `http://localhost:4200`
 
-## Running in Electron Mode
+### Running in Electron Mode
 
-To start the application in Electron mode:
+To start the application as a desktop application:
 
 ```sh
 npm run app
 ```
 
-This will launch the application as a desktop application using Electron.
-
-## Building
-
-To create a production build:
-
-```sh
-npx nx build appdemo
-```
-
-The build artifacts will be stored in the `dist/` directory.
-
-## Testing
-
-To run unit tests:
-
-```sh
-npx nx test appdemo
-```
-
-To run end-to-end tests:
-
-```sh
-npx nx e2e appdemo-e2e
-```
-
 ## Project Structure
 
-This workspace contains:
-
-- `appdemo`: The main Angular application
-- `appdemo-e2e`: End-to-end tests for the application
-
-## Project Dependencies
+The workspace is organized into the following main components:
 
 ```mermaid
 graph TD
@@ -96,37 +84,75 @@ graph TD
 
 ## Available Commands
 
-To see all available targets for a project:
-
+### Development
 ```sh
+# Start development server
+npx nx serve appdemo
+
+# Start in Electron mode
+npm run app
+
+# View all available targets
 npx nx show project appdemo
 ```
 
-## Adding New Features
-
-To generate a new component:
-
+### Building
 ```sh
+# Create production build
+npx nx build appdemo
+
+# Build for Electron
+npm run build:electron
+```
+
+### Testing
+```sh
+# Run unit tests
+npx nx test appdemo
+
+# Run end-to-end tests
+npx nx e2e appdemo-e2e
+
+# Run tests with coverage
+npx nx test appdemo --coverage
+```
+
+### Code Generation
+```sh
+# Generate a new component
 npx nx g @nx/angular:component my-component --project=appdemo
-```
 
-To generate a new service:
-
-```sh
+# Generate a new service
 npx nx g @nx/angular:service my-service --project=appdemo
+
+# Generate a new library
+npx nx g @nx/angular:lib my-lib
 ```
 
-## Nx Cloud
+## Nx Cloud Features
 
-This workspace is connected to Nx Cloud for enhanced build performance and caching. Features include:
+This workspace is connected to Nx Cloud, providing:
+- 🚀 Remote caching for faster builds
+- ⚡ Distributed task execution
+- 🧪 Automated test splitting
+- 🔍 Flaky test detection
+- 📊 Build analytics and insights
 
-- Remote caching
-- Distributed task execution
-- Automated test splitting
-- Flaky test detection
+## Contributing
+
+1. Create a feature branch (`git checkout -b feature/amazing-feature`)
+2. Commit your changes (`git commit -m 'Add amazing feature'`)
+3. Push to the branch (`git push origin feature/amazing-feature`)
+4. Open a Pull Request
 
 ## Useful Links
 
 - [Nx Documentation](https://nx.dev)
 - [Angular Documentation](https://angular.io/docs)
 - [Nx Console Extension](https://nx.dev/getting-started/editor-setup)
+- [Angular Material](https://material.angular.io)
+- [Electron Documentation](https://www.electronjs.org/docs)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
