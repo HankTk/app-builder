@@ -1,25 +1,27 @@
 {
   "name": "@nxwork/source",
   "version": "0.0.0",
-  "description": "NX Work Electron Application",
-  "author": "NX Work Team",
+  "description": "My Application",
+  "author": "Hidenori Takaku",
   "license": "MIT",
   "main": "dist/apps/my-electron/main.js",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "my-app": "nx run my-app:serve:development",
-    "App": "nx run my-electron:serve",
+    "my-electron": "nx run my-electron:serve",
     "cleanup": "node scripts/cleanup.js",
     "generate-icons": "node scripts/generate-icons.js",
-    "electron:serve": "concurrently \"npm run my-app\" \"npm run App\"",
-    "electron:build": "nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder",
-    "electron:release": "npm run electron:build && npm run cleanup"
+    "electron:serve": "concurrently \"npm run my-app\" \"npm run my-electron\"",
+    "electron:build:with-notarize": "nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder",
+    "electron:build:no-notarize": "nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder --mac --config.mac.notarize=false",
+    "electron:release:with-notarize": "npm run electron:build:with-notarize && npm run cleanup",
+    "electron:release:no-notarize": "npm run electron:build:no-notarize && npm run cleanup"
   },
   "private": true,
   "build": {
     "asar": true,
-    "appId": "com.nxwork.app",
-    "productName": "NX Work",
+    "appId": "com.mybase.app",
+    "productName": "My Application",
     "directories": {
       "output": "dist"
     },

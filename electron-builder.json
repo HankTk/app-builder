@@ -1,6 +1,6 @@
 {
-  "appId": "com.nxwork.app",
-  "productName": "NX Work App",
+  "appId": "com.mybase.app",
+  "productName": "My Application",
   "directories": {
     "output": "dist/electron"
   },
@@ -40,4 +40,4 @@
     "**/*.gif"
   ],
   "icon": "./libs/assets/icons/angular/icon.png"
-} 
+}
