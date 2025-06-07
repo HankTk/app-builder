@@ -9,9 +9,11 @@
     "postinstall": "electron-builder install-app-deps",
     "my-app": "nx run my-app:serve:development",
     "App": "nx run my-electron:serve",
+    "cleanup": "node scripts/cleanup.js",
     "generate-icons": "node scripts/generate-icons.js",
     "electron:serve": "concurrently \"npm run my-app\" \"npm run App\"",
-    "electron:build": "nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder"
+    "electron:build": "nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder",
+    "electron:release": "npm run electron:build && npm run cleanup"
   },
   "private": true,
   "build": {
@@ -34,8 +36,8 @@
       "icon": "./libs/assets/icons/angular/icon.icns",
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
-      "entitlements": "build/entitlements.mac.plist",
-      "entitlementsInherit": "build/entitlements.mac.plist"
+      "entitlements": "config/macos/entitlements.mac.plist",
+      "entitlementsInherit": "config/macos/entitlements.mac.plist"
     },
     "win": {
       "target": [

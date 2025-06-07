@@ -20,8 +20,8 @@
     "target": ["dmg", "zip"],
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
-    "entitlements": "build/entitlements.mac.plist",
-    "entitlementsInherit": "build/entitlements.mac.plist",
+    "entitlements": "config/macos/entitlements.mac.plist",
+    "entitlementsInherit": "config/macos/entitlements.mac.plist",
     "icon": "./libs/assets/icons/angular/icon.icns"
   },
   "win": {
