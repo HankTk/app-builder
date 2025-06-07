@@ -23,14 +23,15 @@
     },
     "files": [
       "dist/apps/my-electron/**/*",
-      "dist/apps/my-app/**/*"
+      "dist/apps/my-app/**/*",
+      "libs/assets/icons/angular/**/*"
     ],
     "mac": {
       "target": [
         "dmg",
         "zip"
       ],
-      "icon": "icons/icon.icns",
+      "icon": "./libs/assets/icons/angular/icon.icns",
       "hardenedRuntime": true,
       "gatekeeperAssess": false,
       "entitlements": "build/entitlements.mac.plist",
@@ -41,14 +42,14 @@
         "nsis",
         "portable"
       ],
-      "icon": "icons/icon.ico"
+      "icon": "./libs/assets/icons/angular/icon.ico"
     },
     "linux": {
       "target": [
         "AppImage",
         "deb"
       ],
-      "icon": "icons/icon.png"
+      "icon": "./libs/assets/icons/angular/icon.png"
     }
   },
   "dependencies": {
