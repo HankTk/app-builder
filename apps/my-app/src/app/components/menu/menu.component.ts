@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import { MaterialModule } from '@nxwork/material';
-import { ExuicoreModule } from '@nxwork/exuicore';
+import { AxuicoreModule } from '@nxwork/axuicore';
 import { SideMenuComponent } from '../side-menu/side-menu.component';
 import { LogoComponent } from '../logo/logo.component';
 import { MatDrawer } from '@angular/material/sidenav';
@@ -12,7 +12,7 @@ import { MatDrawer } from '@angular/material/sidenav';
   imports: [
     CommonModule,
     MaterialModule,
-    ExuicoreModule,
+    AxuicoreModule,
     SideMenuComponent,
     LogoComponent
   ],

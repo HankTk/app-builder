@@ -4,7 +4,7 @@ import {
   SettingChangeColorSchemeComponent
 } from "../settings/setting-change-color-scheme/setting-change-color-scheme.component";
 import { MaterialModule } from '@nxwork/material';
-import { ExuicoreModule } from '@nxwork/exuicore';
+import { AxuicoreModule } from '@nxwork/axuicore';
 
 @Component({
   selector: 'app-theme',
@@ -13,7 +13,7 @@ import { ExuicoreModule } from '@nxwork/exuicore';
     CommonModule,
     SettingChangeColorSchemeComponent,
     MaterialModule,
-    ExuicoreModule
+    AxuicoreModule
   ],
   templateUrl: './theme.component.html',
   styleUrls: ['./theme.component.scss']

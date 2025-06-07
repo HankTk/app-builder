@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2023 Takaq. All Rights Reserved.
+ * Copyright (c) 2019-2025 Takaq. All Rights Reserved.
  */
 
 import {
@@ -11,15 +11,21 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'ex-button',
-  standalone: false,
-  templateUrl: './ex-button.component.html',
-  styleUrls: ['./ex-button.component.scss', './_ex-button.theme.scss'],
+  selector: 'ax-button',
+  standalone: true,
+  imports: [CommonModule, MatButtonModule, MatIconModule],
+  templateUrl: './ax-button.component.html',
+  styleUrls: [
+    './ax-button.component.scss',
+    './_ax-button.theme.scss'
+  ],
 })
-export class ExButtonComponent implements OnInit, OnChanges {
+export class AxButtonComponent implements OnInit, OnChanges {
 
   @Input()
   label = 'Label';
@@ -77,4 +83,3 @@ export class ExButtonComponent implements OnInit, OnChanges {
   }
 
 }
-

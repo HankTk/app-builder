@@ -4,7 +4,7 @@
 
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {ExButtonComponent} from './ex-button.component';
+import {ExButtonComponent} from './ax-button.component';
 
 describe('ExButtonComponent', () => {
   let component: ExButtonComponent;

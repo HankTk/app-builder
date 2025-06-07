@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "paths": {
-      "@nxwork/exuicore": ["libs/exuicore/src/index.ts"],
+      "@nxwork/axuicore": ["libs/axuicore/src/index.ts"],
       "@nxwork/material": ["libs/material/src/index.ts"]
     }
   },

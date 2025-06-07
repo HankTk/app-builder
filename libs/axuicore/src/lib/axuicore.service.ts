@@ -9,15 +9,11 @@ import {Router} from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class ExuicoreService
+export class AxuicoreService
 {
 
   private _location!: Location;
   private _router!: Router;
-
-  constructor ()
-  {
-  }
 
   public setRouter (router: Router)
   {
