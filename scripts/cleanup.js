@@ -1,78 +1,74 @@
 const fs = require('fs');
 const path = require('path');
 
-// Directories to clean
-const dirsToClean = [
-  'dist/tmp',
-  'dist/out-tsc',
-  'dist/coverage',
-  'dist/.nx',
-  'dist/.angular',
-  'build/tmp',
-  'build',
-  'tmp',
-  'dist/apps',    // Added to clean
-  'dist/libs'     // Added to clean
-];
-
-// Files to clean (keeping only .dmg)
-const filesToClean = [
-  'dist/latest-mac.yml',
-  'dist/builder-debug.yml',
-  'dist/builder-effective-config.yaml',
-  'dist/*.blockmap',
-  'dist/*.zip'    // Added to clean zip files
-];
-
-// Clean directories
-dirsToClean.forEach(dir => {
-  const fullPath = path.join(process.cwd(), dir);
-  if (fs.existsSync(fullPath)) {
-    console.log(`Cleaning directory: ${dir}`);
-    fs.rmSync(fullPath, { recursive: true, force: true });
+// Function to ensure release directory exists
+function ensureReleaseDir() {
+  const releaseDir = path.join(process.cwd(), 'release');
+  if (!fs.existsSync(releaseDir)) {
+    fs.mkdirSync(releaseDir);
   }
-});
+  return releaseDir;
+}
 
-// Clean files
-filesToClean.forEach(pattern => {
-  const dir = path.dirname(pattern);
-  const basePattern = path.basename(pattern);
-  const fullDir = path.join(process.cwd(), dir);
+// Function to move files to release directory
+function moveToRelease(sourcePath, releaseDir) {
+  const fileName = path.basename(sourcePath);
+  const targetPath = path.join(releaseDir, fileName);
   
-  if (fs.existsSync(fullDir)) {
-    const files = fs.readdirSync(fullDir);
-    files.forEach(file => {
-      if (file.match(basePattern.replace('*', '.*'))) {
-        const filePath = path.join(fullDir, file);
-        console.log(`Cleaning file: ${filePath}`);
-        try {
-          fs.unlinkSync(filePath);
-        } catch (error) {
-          console.error(`Error deleting file ${filePath}:`, error.message);
-        }
-      }
-    });
+  if (fs.existsSync(sourcePath)) {
+    console.log(`Moving ${fileName} to release directory`);
+    fs.renameSync(sourcePath, targetPath);
   }
-});
+}
 
-// Keep only mac-arm64 directory and .dmg file
-const essentialDirs = ['dist/mac-arm64'];
-const distDir = path.join(process.cwd(), 'dist');
-
-// Remove any other directories in dist that are not essential
-if (fs.existsSync(distDir)) {
-  const items = fs.readdirSync(distDir);
-  items.forEach(item => {
-    const itemPath = path.join(distDir, item);
-    const isDir = fs.statSync(itemPath).isDirectory();
-    const isEssential = essentialDirs.some(dir => itemPath.includes(dir));
-    
-    if (isDir && !isEssential) {
-      console.log(`Removing non-essential directory: ${itemPath}`);
-      fs.rmSync(itemPath, { recursive: true, force: true });
+// Pre-build cleanup
+function preBuildCleanup() {
+  console.log('Performing pre-build cleanup...');
+  const dirsToClean = ['dist', 'build'];
+  
+  dirsToClean.forEach(dir => {
+    const fullPath = path.join(process.cwd(), dir);
+    if (fs.existsSync(fullPath)) {
+      console.log(`Removing directory: ${dir}`);
+      fs.rmSync(fullPath, { recursive: true, force: true });
     }
   });
 }
 
-console.log('Cleanup completed successfully!');
-console.log('Note: Only mac-arm64 directory and .dmg file have been preserved.'); 
+// Post-build cleanup and organization
+function postBuildCleanup() {
+  console.log('Performing post-build cleanup and organization...');
+  const releaseDir = ensureReleaseDir();
+  const distDir = path.join(process.cwd(), 'dist');
+  
+  if (fs.existsSync(distDir)) {
+    // Move mac-arm64 directory
+    const macArm64Path = path.join(distDir, 'mac-arm64');
+    if (fs.existsSync(macArm64Path)) {
+      moveToRelease(macArm64Path, releaseDir);
+    }
+    
+    // Move .dmg file
+    const files = fs.readdirSync(distDir);
+    files.forEach(file => {
+      if (file.endsWith('.dmg')) {
+        moveToRelease(path.join(distDir, file), releaseDir);
+      }
+    });
+    
+    // Remove dist directory
+    console.log('Removing dist directory');
+    fs.rmSync(distDir, { recursive: true, force: true });
+  }
+}
+
+// Check if this is a pre-build or post-build cleanup
+const isPreBuild = process.argv.includes('--pre-build');
+
+if (isPreBuild) {
+  preBuildCleanup();
+} else {
+  postBuildCleanup();
+}
+
+console.log('Cleanup completed successfully!'); 

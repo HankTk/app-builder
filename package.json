@@ -10,12 +10,13 @@
     "my-app": "nx run my-app:serve:development",
     "my-electron": "nx run my-electron:serve",
     "cleanup": "node scripts/cleanup.js",
+    "cleanup:pre-build": "node scripts/cleanup.js --pre-build",
     "generate-icons": "node scripts/generate-icons.js",
     "electron:serve": "concurrently \"npm run my-app\" \"npm run my-electron\"",
-    "electron:build:with-notarize": "nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder",
-    "electron:build:no-notarize": "nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder --mac --config.mac.notarize=false",
-    "electron:release:with-notarize": "npm run electron:build:with-notarize && npm run cleanup",
-    "electron:release:no-notarize": "npm run electron:build:no-notarize && npm run cleanup"
+    "electron:build:with-notarize": "npm run cleanup:pre-build && nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder && npm run cleanup",
+    "electron:build:no-notarize": "npm run cleanup:pre-build && nx run my-app:build:production --base-href ./ && nx run my-electron:build && electron-builder --mac --config.mac.notarize=false && npm run cleanup",
+    "electron:release:with-notarize": "npm run electron:build:with-notarize",
+    "electron:release:no-notarize": "npm run electron:build:no-notarize"
   },
   "private": true,
   "build": {
